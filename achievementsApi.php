@@ -122,7 +122,7 @@ class AccèsApiBlizzardClass implements AccèsApiBlizzardInterface {
 						$httpCode = curl_getinfo($info['handle'], CURLINFO_HTTP_CODE);
 
 						if($httpCode == 200){
-							$resultImg = $this->ApiMajPersonnagesImg($chArray, $info['handle']);
+							$resultImg = $this->ApiMajPersonnagesImg($chArray, $multiHandle, $info['handle']);
 							if ($resultImg[0] and $resultImg[2]) { // on a identifié l'image
 								$chArray['img'][$resultImg[1]] = $resultImg[3];  // le transfert d'image, éventuellement vide pour ne pas se reposer la même question de changement d'image
 							}
